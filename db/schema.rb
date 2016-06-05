@@ -11,7 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160604083315) do
+ActiveRecord::Schema.define(version: 20160605095623) do
+
+  create_table "companies", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.text     "address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "companies", ["name"], name: "index_companies_on_name"
+
+  create_table "departments", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.integer  "company_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "departments", ["company_id"], name: "index_departments_on_company_id"
+  add_index "departments", ["name"], name: "index_departments_on_name"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -31,10 +50,14 @@ ActiveRecord::Schema.define(version: 20160604083315) do
     t.string   "chinese_first_name"
     t.string   "chinese_last_name"
     t.boolean  "is_serving"
+    t.integer  "company_id"
+    t.integer  "department_id"
   end
 
   add_index "users", ["chinese_first_name"], name: "index_users_on_chinese_first_name"
   add_index "users", ["chinese_last_name"], name: "index_users_on_chinese_last_name"
+  add_index "users", ["company_id"], name: "index_users_on_company_id"
+  add_index "users", ["department_id"], name: "index_users_on_department_id"
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["first_name"], name: "index_users_on_first_name"
   add_index "users", ["last_name"], name: "index_users_on_last_name"
