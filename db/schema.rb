@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160605095623) do
+ActiveRecord::Schema.define(version: 20160606073717) do
 
   create_table "companies", force: :cascade do |t|
     t.string   "name",       null: false
@@ -31,6 +31,75 @@ ActiveRecord::Schema.define(version: 20160605095623) do
 
   add_index "departments", ["company_id"], name: "index_departments_on_company_id"
   add_index "departments", ["name"], name: "index_departments_on_name"
+
+  create_table "dish_categories", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "dish_categories", ["name"], name: "index_dish_categories_on_name"
+
+  create_table "dishes", force: :cascade do |t|
+    t.string   "name",             null: false
+    t.integer  "price"
+    t.integer  "dish_category_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "dishes", ["dish_category_id"], name: "index_dishes_on_dish_category_id"
+  add_index "dishes", ["name"], name: "index_dishes_on_name"
+
+  create_table "event_dishes", force: :cascade do |t|
+    t.integer  "event_id"
+    t.integer  "dish_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "event_dishes", ["dish_id"], name: "index_event_dishes_on_dish_id"
+  add_index "event_dishes", ["event_id"], name: "index_event_dishes_on_event_id"
+
+  create_table "event_people", force: :cascade do |t|
+    t.integer  "event_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "event_people", ["event_id"], name: "index_event_people_on_event_id"
+  add_index "event_people", ["user_id"], name: "index_event_people_on_user_id"
+
+  create_table "events", force: :cascade do |t|
+    t.date     "date"
+    t.integer  "restaurant_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "events", ["date"], name: "index_events_on_date"
+  add_index "events", ["restaurant_id"], name: "index_events_on_restaurant_id"
+
+  create_table "restaurant_categories", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "restaurant_categories", ["name"], name: "index_restaurant_categories_on_name"
+
+  create_table "restaurants", force: :cascade do |t|
+    t.string   "name",                   null: false
+    t.text     "address"
+    t.string   "phone_number"
+    t.integer  "restaurant_category_id"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "restaurants", ["name"], name: "index_restaurants_on_name"
+  add_index "restaurants", ["restaurant_category_id"], name: "index_restaurants_on_restaurant_category_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
