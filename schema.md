@@ -13,3 +13,46 @@
 | is_serving         | boolean | false | |
 | department_id      | int     | false | foreign_key |
 | company_id         | int     | false | foreign_key |
+
+## Company
+
+| column  | type   | null? | note |
+|---------|--------|-------|------|
+| name    | string | false | |
+| address | string | false | |
+
+## Department
+
+| column     | type   | null? | note |
+|------------|--------|-------|------|
+| name       | string | false | |
+| company_id | int    | false | foreign_key |
+
+## Restaurant
+
+| column                 | type   | null? | note |
+|------------------------|--------|-------|------|
+| name                   | string | false | |
+| address                | text   | true  | |
+| phone_number           | string | true  | |
+| restaurant_category_id | int    | false | foreign_key |
+
+## Restaurant Category
+
+| column | type   | null? | note |
+|--------|--------|-------|------|
+| name   | string | false | |
+
+## Dish
+
+| column           | type   | null? | note |
+|------------------|--------|-------|------|
+| name             | string | false | |
+| price            | int    | true  | |
+| dish_category_id | int    | false | foreign_key |
+
+## Dish Category
+
+| column | type   | null? | note |
+|--------|--------|-------|------|
+| name   | string | false | |
