@@ -2,6 +2,6 @@
 
 ## Usage
 
-`db:migrate` lunch_schedule first, then `db:migrate` lunch_schedule_admin
+`db:migrate` in lunch_schedule_admin instead of lunch_schedule
 
 See schema in schema.md
