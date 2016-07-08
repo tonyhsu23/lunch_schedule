@@ -1,0 +1,19 @@
+<h1>New Restaurant</h1>
+<%= form_for @restaurant do |f| %>
+  <%= f.label :restaurant_category %>
+  <%=
+    f.select :restaurant_category_id,
+    RestaurantCategory.all.map {|rc| [rc.name, rc.id]}
+  %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :address %>
+  <%= f.text_field :address %>
+
+  <%= f.label :phone_number %>
+  <%= f.telephone_field :phone_number %>
+
+  <%= f.submit %>
+<% end %>

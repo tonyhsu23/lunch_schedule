@@ -1,0 +1,7 @@
+<h1>Events</h1>
+<%= div_for(@events) do |event| %>
+  <%= event.title %>
+<% end %>
+
+<%= link_to('new event', new_event_path) %>
+<%= link_to('new restaurant', new_restaurant_path) %>
