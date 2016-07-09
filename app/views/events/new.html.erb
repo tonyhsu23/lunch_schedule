@@ -1,0 +1,13 @@
+<h1>New Event</h1>
+<%= form_for @event do |f| %>
+  <%= f.label :date %>
+  <%= f.date_field :date %>
+  
+  <%= f.label :restaurant %>
+  <%= f.select :restaurant_id, restaurants %>
+ 
+  <%= f.label :dishs %>
+  <%= f.select :dish_ids, dishes %>
+
+  <%= f.submit %>
+<% end %>

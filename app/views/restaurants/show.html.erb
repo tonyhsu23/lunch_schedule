@@ -1,0 +1,11 @@
+<h1><%= @restaurant.name %></h1>
+<div>
+  <%= link_to('new dishes', new_dish_path(restaurant: get_id_params)) %>
+</div>
+<br>
+<div>
+  <%= div_for @dishes do |dish| %>
+    <%= dish.name %>
+    <%= dish.price %>
+  <% end %>
+</div>

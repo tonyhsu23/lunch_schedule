@@ -1,0 +1,15 @@
+<h1>New Dishes</h1>
+<%= form_for @dish do |f| %>
+  <%= f.label :dish_category %>
+  <%= f.select :dish_category_id,
+    dish_categories %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :price %>
+  <%= f.number_field :price %>
+
+  <%= f.hidden_field(:restaurant_id, value: get_restaurant_id_params) %>
+  <%= f.submit %>
+<% end %>

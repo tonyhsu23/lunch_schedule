@@ -4,4 +4,8 @@ module RestaurantsHelper
       [category.name, category.id]
     end
   end
+
+  def get_id_params
+    params[:id]
+  end
 end
