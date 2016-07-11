@@ -4,8 +4,4 @@ module DishesHelper
       [dish.name, dish.id]
     end
   end
-
-  def get_restaurant_id_params
-    params[:restaurant]
-  end
 end

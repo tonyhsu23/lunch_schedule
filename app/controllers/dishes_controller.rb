@@ -1,16 +1,13 @@
 class DishesController < ApplicationController
-  def new
-    @dish = Dish.new
-  end
-
   def create
     restaurant_id = params[:dish][:restaurant_id]
-    dish = Dish.create(dish_params)
+    @dish = Dish.new(dish_params)
 
-    if dish.save
-      redirect_to restaurant_path(restaurant_id)
-    else
-      render :new
+    respond_to do |format|
+      unless @dish.save
+        format.js { flash.now[:notice] = 'error' }
+      end
+      format.js
     end
   end
 
