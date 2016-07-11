@@ -15,7 +15,7 @@ class EventsController < ApplicationController
     dish_ids = params[:event][:restaurant][:dish_ids]
     dishes = Dish.where(id: dish_ids)
 
-    event = Event.create(event_params)
+    event = Event.new(event_params)
     event.users << current_user
     event.dishes = dishes
 
