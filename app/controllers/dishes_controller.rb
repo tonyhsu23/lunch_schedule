@@ -1,6 +1,5 @@
 class DishesController < ApplicationController
   def create
-    restaurant_id = params[:dish][:restaurant_id]
     @dish = Dish.new(dish_params)
 
     respond_to do |format|
