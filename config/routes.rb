@@ -4,5 +4,5 @@ Rails.application.routes.draw do
 
   resources :events, only: [:index, :show, :new, :create]
   resources :restaurants, only: [:index, :show, :new, :create]
-  resources :dishes, only: [:new, :create]
+  resources :dishes, only: [:create]
 end

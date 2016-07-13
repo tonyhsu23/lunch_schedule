@@ -19,6 +19,7 @@ gem 'devise', '~> 4.0'
 group :development, :test do
   gem 'byebug'
   gem 'pry-rails'
+  gem 'rubocop', require: false
 end
 
 group :development do
