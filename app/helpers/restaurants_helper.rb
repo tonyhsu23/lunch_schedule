@@ -5,7 +5,7 @@ module RestaurantsHelper
     end
   end
 
-  def get_id_params
+  def id_param
     params[:id]
   end
 end
