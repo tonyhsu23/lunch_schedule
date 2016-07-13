@@ -7,6 +7,6 @@ class Event < ActiveRecord::Base
 
   def self.dashboard(user)
     colleagues = User.colleagues(user.company_id)
-    joins(:users).where(event_people: { user_id: colleagues })
+    joins(:users).where(event_people: { user_id: colleagues }).distinct
   end
 end

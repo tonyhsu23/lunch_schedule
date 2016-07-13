@@ -2,14 +2,21 @@
 <%= form_for @event do |f| %>
   <%= f.label :date %>
   <%= f.date_field :date %>
+  <br><br>
+
+  <%= f.label :participates %>
+  <%= collection_check_boxes(:users, :user_ids, colleagues, :id, :first_name, {include_hidden: false}) %>
+  <br><br>
 
   <%= f.label :restaurant %>
   <%= f.select :restaurant_id, restaurants %>
+  <br><br>
  
   <%= f.fields_for :restaurant do |restaurant_form| %>
     <%= restaurant_form.label :dishes %>
     <%= restaurant_form.collection_check_boxes(:dish_ids, Dish.all, :id, :name, {include_hidden: false}) %>
   <% end %>
+  <br><br>
 
   <%= f.submit %>
 <% end %>

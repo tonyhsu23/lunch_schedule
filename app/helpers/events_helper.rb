@@ -4,4 +4,8 @@ module EventsHelper
       [restaurant.name, restaurant.id]
     end
   end
+
+  def colleagues
+    User.colleagues(current_user.company_id)
+  end
 end
