@@ -1,6 +1,7 @@
 class RestaurantsController < ApplicationController
   def index
     @restaurants = Restaurant.all
+    @restaurant = Restaurant.new
   end
 
   def show
@@ -9,16 +10,14 @@ class RestaurantsController < ApplicationController
     @dish = Dish.new
   end
 
-  def new
-    @restaurant = Restaurant.new
-  end
-
   def create
-    restaurant = Restaurant.new(restaurant_params)
-    if restaurant.save
-      redirect_to events_path
-    else
-      render :new
+    @restaurant = Restaurant.new(restaurant_params)
+
+    respond_to do |format|
+      unless @restaurant.save
+        format.js { flash.now[:notice] = 'error' }
+      end
+      format.js
     end
   end
 

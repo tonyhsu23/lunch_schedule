@@ -1,0 +1,3 @@
+$('#restaurants').append("<%= escape_javascript(render @restaurant) %>");
+$('.flash').html("<%= flash[:notice] %>");
+$(".new_restaurant")[0].reset();
