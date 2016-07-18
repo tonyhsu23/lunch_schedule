@@ -12,7 +12,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    dish_ids = params[:event][:restaurant][:dish_ids]
+    dish_ids = params[:dish][:ids]
     dishes = Dish.where(id: dish_ids)
 
     user_ids = params[:users][:user_ids]
@@ -27,6 +27,10 @@ class EventsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def get_rest_dishes
+    @dishes = Dish.where(restaurant_id: params[:restaurant_id])
   end
 
   private

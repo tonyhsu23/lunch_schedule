@@ -1,0 +1,2 @@
+$(".dish_check_box").html("");
+$(".dish_check_box").append("<%= j(collection_check_boxes(:dish, :ids, @dishes, :id, :name, {include_hidden: false})) %>");

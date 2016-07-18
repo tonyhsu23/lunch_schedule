@@ -9,13 +9,13 @@
   <br><br>
 
   <%= f.label :restaurant %>
-  <%= f.select :restaurant_id, restaurants %>
+  <%= f.select :restaurant_id, restaurants,
+    {include_blank: 'select'}, {class: 'restaurant_select'} %>
   <br><br>
- 
-  <%= f.fields_for :restaurant do |restaurant_form| %>
-    <%= restaurant_form.label :dishes %>
-    <%= restaurant_form.collection_check_boxes(:dish_ids, Dish.all, :id, :name, {include_hidden: false}) %>
-  <% end %>
+
+  <h3>dishes</h3>
+  <div class="dish_check_box"></div>
+
   <br><br>
 
   <%= f.submit %>
