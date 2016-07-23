@@ -9,4 +9,12 @@ class Event < ActiveRecord::Base
     colleagues = User.colleagues(user.company_id)
     joins(:users).where(event_people: { user_id: colleagues }).distinct
   end
+
+  def add_participants(participants)
+    users << participants
+  end
+
+  def add_dishes(our_dishes)
+    dishes << our_dishes
+  end
 end

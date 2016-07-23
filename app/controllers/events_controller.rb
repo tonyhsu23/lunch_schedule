@@ -12,17 +12,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    dish_ids = params[:dish][:ids]
-    dishes = Dish.where(id: dish_ids)
-
-    user_ids = params[:users][:user_ids]
-    users = User.where(id: user_ids)
-
-    event = Event.new(event_params)
-    event.users << users
-    event.dishes = dishes
-
-    if event.save
+    if make_event.save
       redirect_to events_path
     else
       render :new
@@ -37,5 +27,20 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(:date, :restaurant_id)
+  end
+
+  def make_event
+    event = Event.new(event_params)
+    event.add_participants(param_users)
+    event.add_dishes(param_dishes)
+    event
+  end
+
+  def param_dishes
+    Dish.where(id: params[:dish][:ids])
+  end
+
+  def param_users
+    User.where(id: params[:users][:user_ids])
   end
 end
