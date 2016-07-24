@@ -1,5 +1,8 @@
 <h1>Show Event</h1>
 <%= div_for @event do %>
+  <div>
+    <%= @event.restaurant.name %>
+  </div>
   <%= render @event.users %>
   <%= render @event.dishes %>
 <% end %>
