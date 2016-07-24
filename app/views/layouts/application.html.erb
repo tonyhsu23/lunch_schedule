@@ -7,12 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="container">
-    <% if user_signed_in? %>
-      <%= link_to t('devise.sessions.sign_out'), destroy_user_session_path, method: :delete %>
-    <% end %>
+  <% if user_signed_in? %>
+    <%= render 'shared/navbar' %>
+    <%= link_to t('devise.sessions.sign_out'), destroy_user_session_path, method: :delete %>
+  <% end %>
 
+  <div class="container">
     <%= yield %>
   </div>
+
+  <%= render 'shared/footer' %>
 </body>
 </html>
