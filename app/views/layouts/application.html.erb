@@ -9,13 +9,17 @@
 <body>
   <% if user_signed_in? %>
     <%= render 'shared/navbar' %>
-    <%= link_to t('devise.sessions.sign_out'), destroy_user_session_path, method: :delete %>
+  <% else %>
+    <%= render 'shared/landing_navbar' %>
   <% end %>
 
   <div class="container">
     <%= yield %>
   </div>
 
-  <%= render 'shared/footer' %>
+  <% if params[:controller] == 'landing' %>
+  <% else %>
+    <%= render 'shared/footer' %>
+  <% end %>
 </body>
 </html>
