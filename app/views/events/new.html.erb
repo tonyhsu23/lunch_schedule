@@ -1,22 +1,41 @@
-<h1>New Event</h1>
-<%= form_for @event do |f| %>
-  <%= f.label :date %>
-  <%= f.date_field :date %>
-  <br><br>
+<div class="col-md-6 col-md-offset-3">
+  <h1>New Event</h1>
 
-  <%= f.label :participates %>
-  <%= collection_check_boxes(:users, :user_ids, colleagues, :id, :first_name, {include_hidden: false}) %>
-  <br><br>
+  <%= form_for @event do |f| %>
+    <div class="field form-group">
+      <%= f.label :date %>
+      <%= f.date_field :date, class: 'form-control' %>
+    </div>
 
-  <%= f.label :restaurant %>
-  <%= f.select :restaurant_id, restaurants,
-    {include_blank: 'select'}, {class: 'restaurant_select'} %>
-  <br><br>
+    <div class="field form-group">
+      <%= f.label :participates %>
+      <%= collection_check_boxes(:users, :user_ids, colleagues, :id, :first_name, {include_hidden: false}) do |box| %>
+        <div class="row">
+          <%= box.label class: 'checkbox-inline' do %>
+            <div class="col-md-4">
+              <%= box.check_box class: 'checkbox-inline' %>
+              <%= box.label %>
+            </div>       
+          <% end %>
+        </div>
+      <% end %>
+    </div>
 
-  <h3>dishes</h3>
-  <div class="dish_check_box"></div>
+    <div class="field form-group">
+      <%= f.label :restaurant %>
+      <%= f.select :restaurant_id, restaurants,
+        {include_blank: 'select'}, {class: 'restaurant_select form-control'} %>
+    </div>
 
-  <br><br>
+    <div class="form-group">
+      <h3>dishes</h3>
+      <div class="dish_check_box"></div>
+    </div>
 
-  <%= f.submit %>
-<% end %>
+    <br><br>
+
+    <div class="actions form-actions">
+      <%= f.submit class: 'btn btn-primary form-control' %>
+    </div>
+  <% end %>
+</div>
