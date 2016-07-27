@@ -1,3 +1,4 @@
+<h3><%= link_to 'New Event', new_event_path %></h3>
 <h1>Events</h1>
 <%= div_for @events do |event| %>
   <%= link_to(event.date, event) %>
