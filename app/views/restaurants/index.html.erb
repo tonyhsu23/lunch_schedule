@@ -1,25 +1,41 @@
-<div class='flash'></div>
-<h1>New Restaurant</h1>
-<%= form_for @restaurant, remote: true do |f| %>
-  <%= f.label :restaurant_category %>
-  <%= f.select :restaurant_category_id,
-    restaurant_categories %>
+<div class="row">
+  <div class="col-md-9">
+    <h1>Restaurants</h1>
+    <div id='restaurants'>
+      <%= div_for @restaurants do |restaurant| %>
+        <%= render restaurant %>
+      <% end %>
+    </div>
+  </div>
 
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+  <div class="col-md-3">
+    <div class='flash'></div>
+    <h1>New Restaurant</h1>
+    <%= form_for @restaurant, remote: true do |f| %>
+      <div class="field form-group">
+        <%= f.label :restaurant_category %>
+        <%= f.select :restaurant_category_id,
+          restaurant_categories, {}, { class: 'form-control' } %>
+      </div>
 
-  <%= f.label :address %>
-  <%= f.text_field :address %>
+      <div class="field form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, { class: 'form-control' } %>
+      </div>
 
-  <%= f.label :phone_number %>
-  <%= f.telephone_field :phone_number %>
+      <div class="field form-group">
+        <%= f.label :address %>
+        <%= f.text_field :address, { class: 'form-control' } %>
+      </div>
 
-  <%= f.submit %>
-<% end %>
+      <div class="field form-group">
+        <%= f.label :phone_number %>
+        <%= f.telephone_field :phone_number, { class: 'form-control' } %>
+      </div>
 
-<h1>Restaurants</h1>
-<div id='restaurants'>
-  <%= div_for @restaurants do |restaurant| %>
-    <%= render restaurant %>
-  <% end %>
+      <div class="field form-group">
+        <%= f.submit class: 'btn btn-primary form-control' %>
+      </div>
+    <% end %>
+  </div>
 </div>
