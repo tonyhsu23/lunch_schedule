@@ -10,6 +10,10 @@ class Event < ActiveRecord::Base
     joins(:users).where(event_people: { user_id: colleagues }).distinct
   end
 
+  def self.my_events(user)
+    joins(:users).where(event_people: { user_id: user.id }).distinct
+  end
+
   def add_participants(participants)
     users << participants
   end
