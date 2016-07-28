@@ -9,12 +9,12 @@
 
     <div class="field form-group">
       <%= f.label :participates %>
-      <%= collection_check_boxes(:users, :user_ids, colleagues, :id, :first_name, {include_hidden: false}) do |box| %>
+      <%= collection_check_boxes(:users, :user_ids, colleagues, :id, :first_name, {include_hidden: false}) do |b| %>
         <div class="row">
-          <%= box.label class: 'checkbox-inline' do %>
+          <%= b.label class: 'checkbox-inline' do %>
             <div class="col-md-4">
-              <%= box.check_box class: 'checkbox-inline' %>
-              <%= box.label %>
+              <%= b.check_box class: 'checkbox-inline' %>
+              <%= b.label %>
             </div>       
           <% end %>
         </div>
@@ -27,7 +27,7 @@
         {include_blank: 'select'}, {class: 'restaurant_select form-control'} %>
     </div>
 
-    <div class="form-group">
+    <div class="form-inline">
       <h3>dishes</h3>
       <div class="dish_check_box"></div>
     </div>
