@@ -1,3 +1,16 @@
-<%= div_for restaurant do %>
-  <%= link_to(restaurant.name, restaurant) %>
-<% end %>
+<tr>
+  <%= div_for restaurant do %>
+    <th>
+      <%= restaurant.name %>
+    </th>
+    <th>
+      <%= restaurant.phone_number %>
+    </th>
+    <th>
+      <%= restaurant.address %>
+    </th>
+    <th>
+      <%= link_to('Menu', restaurant) %>
+    </th>
+  <% end %>
+</tr>

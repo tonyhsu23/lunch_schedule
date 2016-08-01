@@ -1,26 +1,47 @@
-<div class='flash'></div>
+<div class="flash"></div>
 <h1><%= @restaurant.name %></h1>
 
 <h2>New Dishes</h2>
 <%= form_for @dish, remote: true do |f| %>
-  <%= f.label :dish_category %>
-  <%= f.select :dish_category_id,
-    dish_categories %>
+  <div class="form-inline">
+    <div class="field form-group">
+      <%= f.label :dish_category %>
+      <%= f.select :dish_category_id,
+        dish_categories, {}, { class: 'form-control' } %>
+    </div>
 
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+    <div class="field form-group">
+      <%= f.text_field :name,
+        { class: 'form-control', placeholder: 'dish name' } %>
+    </div>
 
-  <%= f.label :price %>
-  <%= f.number_field :price %>
+    <div class="field form-group">
+      <%= f.number_field :price,
+        { class: 'form-control', placeholder: 'price' } %>
+    </div>
 
-  <%= f.hidden_field(:restaurant_id, value: id_param) %>
-  <%= f.submit %>
+    <div class="field form-group">
+      <%= f.hidden_field(:restaurant_id, value: id_param) %>
+      <%= f.submit class: 'btn btn-primary fomr-control' %>
+    </div>
+  </div>
 <% end %>
 
 <br>
 
-<div id='dishes'>
-  <%= div_for @dishes do |dish| %>
-    <%= render dish %>
-  <% end %>
+<div id="dishes">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>name</th>
+        <th>price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= div_for @dishes do |dish| %>
+        <%= render dish %>
+      <% end %>
+    </tbody>
+  </table>
 </div>
