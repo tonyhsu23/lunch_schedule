@@ -1,3 +1,3 @@
-$('#dishes').append("<%= escape_javascript(render @dish) %>");
-$('.flash').html("<%= flash[:notice] %>")
+$("#dish-table").append("<tr><%= j(render @dish) %></tr>");
+$(".flash").html("<%= flash[:notice] %>")
 $(".new_dish")[0].reset();

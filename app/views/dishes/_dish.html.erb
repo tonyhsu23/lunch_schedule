@@ -1,11 +1,12 @@
-<%= div_for dish do %>
-  <tr>
-    <th>image here</th>
-    <th>
-      <%= dish.name %>
-    </th>
-    <th>
-      <%= dish.price %>
-    </th>
-  </tr>
-<% end %>
+<tr>
+  <td>image here</td>
+  <td>
+    <%= dish.dish_category.name %>
+  </td>
+  <td>
+    <%= dish.name %>
+  </td>
+  <td>
+    <%= dish.price %>
+  </td>
+</tr>
