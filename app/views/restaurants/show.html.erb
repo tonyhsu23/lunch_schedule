@@ -5,19 +5,18 @@
 <%= form_for @dish, remote: true do |f| %>
   <div class="form-inline">
     <div class="field form-group">
-      <%= f.label :dish_category %>
       <%= f.select :dish_category_id,
-        dish_categories, {}, { class: 'form-control' } %>
+        dish_categories, { include_blank: 'category...' }, { class: 'form-control', required: true } %>
     </div>
 
     <div class="field form-group">
       <%= f.text_field :name,
-        { class: 'form-control', placeholder: 'dish name' } %>
+        { class: 'form-control', placeholder: 'dish name', required: true} %>
     </div>
 
     <div class="field form-group">
       <%= f.number_field :price,
-        { class: 'form-control', placeholder: 'price' } %>
+        { class: 'form-control', placeholder: 'price', required: true } %>
     </div>
 
     <div class="field form-group">

@@ -4,7 +4,7 @@
   <%= form_for @event do |f| %>
     <div class="field form-group">
       <%= f.label :date %>
-      <%= f.date_field :date, class: 'form-control' %>
+      <%= f.date_field :date, class: 'form-control', required: true %>
     </div>
 
     <div class="field form-group">
@@ -24,12 +24,12 @@
     <div class="field form-group">
       <%= f.label :restaurant %>
       <%= f.select :restaurant_id, restaurants,
-        {include_blank: 'select'}, {class: 'restaurant_select form-control'} %>
+        {include_blank: 'select'}, {class: 'restaurant_select form-control', required: true} %>
     </div>
 
     <div class="form-inline">
       <h3>dishes</h3>
-      <div class="dish_check_box"></div>
+      <div class="dish-check-box"></div>
     </div>
 
     <br><br>
