@@ -1,6 +1,6 @@
 $(document).on("ready page:load", function() {
-  $(".btn-primary").click( function(e) {
-    checked = $(".events-new .participants input[type=checkbox]:checked").length;
+  $(".events-new .btn-primary").click( function(e) {
+    checked = $(".participants input[type=checkbox]:checked").length;
     if(!checked) {
       $(".require-participant-text").html("*it is required!");
       e.preventDefault();
@@ -23,8 +23,8 @@ $(document).on("ready page:load", function() {
 });
 
 function atLeastOneChecked() {
-  $(".btn-primary").click( function(e) {
-    checked = $(".events-new .dish-check-box input[type=checkbox]:checked").length;
+  $(".events-new .btn-primary").click( function(e) {
+    checked = $(".dish-check-box input[type=checkbox]:checked").length;
     if(!checked) {
       $(".require-dish-text").html("*it is required!");
       e.preventDefault();

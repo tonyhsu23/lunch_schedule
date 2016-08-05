@@ -1,3 +1,75 @@
 .dish-check-box {
   overflow: hidden;
 }
+
+.require-participant-text {
+  color: red;
+}
+
+.require-dish-text {
+  color: red;
+}
+
+body {
+  background-color: #f8f8f8;
+  padding: 20px 0 20px 0;
+}
+
+/* Navbar Style */
+$bgDefault      : #ffffff;
+$bgHighlight    : #ffffff;
+$colDefault     : #0d0d0d;
+$colHover       : #4c4c4c; 
+
+.navbar-default {
+  background-color: $bgDefault;
+  border-color: $bgHighlight;
+  margin-bottom: 0;
+  padding: 10px 0 10px 0;
+  border: 0px 0px 10px 0px;
+  border-color: #d2d2d2;
+  .navbar-brand {
+    color: $colDefault;
+    font-family: sans-serif;
+    font-size: 23px;
+    &:hover, &:focus {
+  color: $colHover; }}
+  .navbar-nav {
+    > li {
+      > a {
+        color: $colDefault;
+        &:hover, &:focus {
+    color: $colHover;   }}}
+    .active {
+      > a, > a:hover, > a:focus {
+        color: $colHover;
+    background-color: $bgHighlight; }}
+    .open {
+      > a, > a:hover, > a:focus {
+        color: $colHover;
+        background-color: $bgHighlight;
+        .caret {
+          border-top-color: $colHover;
+    border-bottom-color: $colHover; }}}
+    > .dropdown {
+      > a {
+        .caret {
+          border-top-color: $colDefault;
+        border-bottom-color: $colDefault; }
+        &:hover, &:focus {
+          .caret {
+            border-top-color: $colHover;
+  border-bottom-color: $colHover; }}}}}
+  .navbar-toggle {
+    border-color: $bgHighlight;
+    &:hover, &:focus {
+    background-color: $bgHighlight; }
+    .icon-bar {
+background-color: $colDefault; }}}
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: $colDefault;
+    &:hover, &:focus {
+      color: $colHover;
+  background-color: $bgHighlight; }}
+}
