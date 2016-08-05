@@ -1,12 +1,9 @@
-<tr>
-  <td>image here</td>
-  <td>
-    <%= dish.dish_category.name %>
-  </td>
-  <td>
-    <%= dish.name %>
-  </td>
-  <td>
-    <%= dish.price %>
-  </td>
-</tr>
+<div class="col-md-3 col-sm-6 hero-feature">
+  <div class="thumbnail">
+    <img src="http://placehold.it/800x500" alt="">
+    <div class="caption">
+      <h3><%= dish.name %></h3>
+      <p>NTD <%= dish.price %></p>
+    </div>
+  </div>
+</div>

@@ -1,22 +1,10 @@
 <div class="row">
   <div class="col-md-9">
     <h1>Restaurants</h1>
-    <div id="restaurants">
-      <table class="table table-hover" id="restaurant-table">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Phone Number</th>
-            <th>Address</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <%= div_for @restaurants do |restaurant| %>
-            <%= render restaurant %>
-          <% end %>
-        </tbody>
-      </table>
+    <div id="restaurants" class="restaurant-block">
+      <%= div_for @restaurants do |restaurant|  %>
+        <%= render restaurant %>
+      <% end %>
     </div>
   </div>
 

@@ -1,3 +1,3 @@
-$("#dish-table").append("<tr><%= j(render @dish) %></tr>");
+$(".dish-block").append("<%= j(render @dish) %>");
 $(".flash").html("<%= flash[:notice] %>")
 $(".new_dish")[0].reset();

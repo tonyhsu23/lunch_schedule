@@ -37,7 +37,7 @@
             <li><a href="#">Settings</a></li>
             <li><a href="#">Profile</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#"><%= link_to t('devise.sessions.sign_out'), destroy_user_session_path, method: :delete %></a></li>
+            <li><%= link_to t('devise.sessions.sign_out'), destroy_user_session_path, method: :delete %></li>
           </ul>
         </li>
       </ul>

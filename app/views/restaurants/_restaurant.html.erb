@@ -1,14 +1,6 @@
-<tr>
-  <td>
-    <%= restaurant.name %>
-  </td>
-  <td>
-    <%= restaurant.phone_number %>
-  </td>
-  <td>
-    <%= restaurant.address %>
-  </td>
-  <td>
-    <%= link_to('menu', restaurant) %>
-  </td>
-</tr>
+<hr>
+
+<h3><%= restaurant.name %></h3>
+<h5><%= restaurant.phone_number %></h5>
+<h5><%= restaurant.address %></h5>
+<%= button_to('menu', restaurant, method: 'get', class: 'btn btn-primary') %>

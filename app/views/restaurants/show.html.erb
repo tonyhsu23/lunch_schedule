@@ -28,20 +28,14 @@
 
 <br>
 
-<div id="dishes">
-  <table class="table table-hover" id="dish-table">
-    <thead>
-      <tr>
-        <th>Image</th>
-        <th>type</th>
-        <th>name</th>
-        <th>price</th>
-      </tr>
-    </thead>
-    <tbody>
-      <%= div_for @dishes do |dish| %>
-        <%= render dish %>
-      <% end %>
-    </tbody>
-  </table>
+<div class="row">
+  <div class="col-lg-12">
+    <h3>Menu</h3>
+  </div>
+</div>
+
+<div class="row text-center dish-block">
+  <%= div_for @dishes do |dish| %>
+    <%= render dish %>
+  <% end %>
 </div>
