@@ -9,7 +9,7 @@
 
     <div class="field form-group participants">
       <%= f.label :participates %>
-      <font class="require-participant-text" style="color:red;"></font>
+      <font class="require-participant-text"></font>
       <%= collection_check_boxes(:users, :user_ids, colleagues, :id, :first_name, {include_hidden: false}) do |b| %>
         <div class="row">
           <%= b.label class: 'checkbox-inline' do %>
@@ -30,7 +30,7 @@
 
     <div class="form-inline">
       <%= f.label :dishes %>
-      <font class="require-dish-text" style="color:red;"></font>
+      <font class="require-dish-text"></font>
       <div class="dish-check-box"></div>
     </div>
 
