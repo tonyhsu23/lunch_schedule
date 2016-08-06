@@ -1,5 +1,25 @@
 <h3><%= link_to 'New Event', new_event_path %></h3>
-<h1>Events</h1>
-<%= div_for @events do |event| %>
-  <%= link_to(event.date, event) %>
-<% end %>
+<%# <%= div_for @events do |event| %1> %>
+<%#   <%= link_to(event.date, event) %1> %>
+<%# <% end %1> %>
+
+<div class="row">
+  <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <h1>Events</h1>
+    <hr>
+    <%= div_for @events do |event| %>
+      <div class="post-preview">
+        <h3 class="post-title">
+          <%= link_to(event.date, event) %>
+        </h3>
+        <h3 class="post-subtitle">
+          <%= link_to(event.restaurant.name, event.restaurant) %>
+        </h3>
+        <p class="post-meta">Participants 
+          <%= event.users.map(&:full_name).join(', ') %>
+        </p>
+      </div>
+      <hr>
+    <% end %>
+  </div>
+</div>
