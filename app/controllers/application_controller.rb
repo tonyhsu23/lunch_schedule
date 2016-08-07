@@ -5,6 +5,12 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
 
   def after_sign_in_path_for(resource)
+    message =
+      t('devise.sessions.signed_in') +
+      t('devise.sessions.welcome') +
+      current_user.full_name
+
+    flash['notice'] = message
     dashboard_index_path
   end
 end

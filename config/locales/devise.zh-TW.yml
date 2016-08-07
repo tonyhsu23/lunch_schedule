@@ -80,6 +80,7 @@
     sessions:
       sign_out: "登出"
       signed_in: "成功登入了。"
+      welcome: "歡迎使用 Lunch Schedule，"
       signed_out: "成功登出了。"
       already_signed_out: "成功登出了。"
     unlocks:
