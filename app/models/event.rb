@@ -5,6 +5,9 @@ class Event < ActiveRecord::Base
   has_many :dishes, through: :event_dishes
   has_many :event_dishes, dependent: :destroy
 
+  validates :date, presence: true
+  validates :restaurant_id, presence: true
+
   def self.dashboard(user)
     colleagues = User.colleagues(user.company_id)
     joins(:users).where(event_people: { user_id: colleagues }).distinct
