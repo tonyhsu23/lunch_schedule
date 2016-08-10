@@ -1,0 +1,16 @@
+<div class="single-event">
+  <% @events.each do |event| %>
+    <div class="post-preview">
+      <h3 class="post-title">
+        <%= link_to(event.date, event) %>
+      </h3>
+      <h3 class="post-subtitle">
+        <%= link_to(event.restaurant.name, event.restaurant) %>
+      </h3>
+      <p class="post-meta">Participants 
+        <%= event.users.map(&:full_name).join(', ') %>
+      </p>
+    </div>
+    <hr>
+  <% end %>
+</div>

@@ -23,6 +23,10 @@ class EventsController < ApplicationController
     @dishes = Dish.where(restaurant_id: params[:restaurant_id])
   end
 
+  def get_events_by_rc
+    @events = Event.my_events_by_rc(current_user, params[:rest_cate_id])
+  end
+
   private
 
   def event_params

@@ -7,14 +7,29 @@ class Event < ActiveRecord::Base
 
   validates :date, presence: true
   validates :restaurant_id, presence: true
-
+  
   def self.dashboard(user)
     colleagues = User.colleagues(user.company_id)
-    joins(:users).where(event_people: { user_id: colleagues }).distinct
+    joins(:users)
+    .includes(:restaurant)
+    .where(event_people: { user_id: colleagues })
+    .distinct
   end
 
   def self.my_events(user)
-    joins(:users).where(event_people: { user_id: user.id }).distinct
+    joins(:users)
+    .includes(:restaurant)
+    .where(event_people: { user_id: user.id })
+    .distinct
+  end
+
+  def self.my_events_by_rc(user, rc_id)
+    if rc_id == 'false'
+      my_events(user)
+    else
+      my_events(user)
+      .where(restaurants: { restaurant_category_id: rc_id })
+    end
   end
 
   def add_participants(participants)
