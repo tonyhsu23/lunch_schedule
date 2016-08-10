@@ -1,5 +1,5 @@
 $(document).on("ready page:load", function() {
-  $(".events-new .restaurant_select").select2({theme: "bootstrap"});
+  $(".events-new .restaurant_select").select2({theme: "bootstrap", language: "zh-TW"});
   $(".events-new .btn-primary").click( function(e) {
     checked = $(".participants input[type=checkbox]:checked").length;
     if(!checked) {
