@@ -1,11 +1,8 @@
 <div class="row <%= controller_name %>-<%= action_name %>">
   <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
     <h1>Events</h1>
-
-    <%= collection_select(:restaurant_category, :restaurant_category_id, RestaurantCategory.all, :id, :name, {include_blank: 'All'}) %>
-
+    <%= collection_select(:restaurant_category, :restaurant_category_id, RestaurantCategory.all, :id, :name, {include_blank: 'All'}, {class: 'rc-selector'}) %>
     <hr>
-
     <%= render 'events/event_list' %>
   </div>
 </div>

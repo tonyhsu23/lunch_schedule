@@ -16,6 +16,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise', '~> 4.0'
 gem 'font-awesome-rails'
 gem 'client_side_validations'
+gem "select2-rails"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

@@ -1,4 +1,5 @@
 $(document).on("ready page:load", function() {
+  $(".events-index .rc-selector").select2({theme: "bootstrap"});
   $(".events-index select").change( function(e) {
     if ($(this).val() == "" || $(this).val() == null){
       var id = false;
