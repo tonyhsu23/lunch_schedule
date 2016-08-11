@@ -1,0 +1,83 @@
+"zh-TW":
+  views:
+    navbar:
+      new_event: "新增活動"
+      my_event: "我的活動" 
+    actions:
+      new_restaurant: "新增餐廳"
+      new_dish: "新增菜餚"
+    content:
+      menu: "菜單"
+      participants: "一同用餐"
+    placeholder:
+      restaurant:
+        category: "餐廳種類"
+        name: "餐廳名稱"
+        address: "餐廳地址"
+        phone: "餐廳電話"
+      dish:
+        category: "菜餚種類"
+        name: "菜餚名稱"
+        price: "菜餚價錢"
+      event:
+        select_all: "全部"
+  activerecord:
+    models:
+      admin_user: "管理員"
+      company: "公司"
+      department: "部門"
+      restaurant_category: "餐廳種類"
+      dish_category: "菜餚種類"
+      user: "員工"
+      event: "活動"
+      restaurant: "餐廳"
+      dish: "菜餚"
+    attributes:
+      admin_user:
+        company_id: "公司"
+        company: "公司"
+        role: "角色"
+        password: "密碼"
+        password_confirmation: "密碼確認"
+        current_sign_in_at: "登入時間" 
+        current_sign_in_ip: "登入 IP" 
+        last_sign_in_at: "上次登入時間" 
+        last_sign_in_ip: "上次登入 IP" 
+        sign_in_count: "登入次數" 
+        created_at: "建立時間" 
+        updated_at: "更新時間" 
+      user:
+        company: "公司"
+        department: "部門"
+        chinese_first_name: "名字"
+        chinese_last_name: "姓氏"
+        is_serving: "是否在職"
+        company_id: "所屬公司"
+        department_id: "所屬部門"
+        password: "密碼"
+        password_confirmation: "密碼確認"
+        current_sign_in_at: "登入時間" 
+        current_sign_in_ip: "登入 IP" 
+        last_sign_in_at: "上次登入時間" 
+        last_sign_in_ip: "上次登入 IP" 
+        sign_in_count: "登入次數" 
+        created_at: "建立時間" 
+        updated_at: "更新時間" 
+      company:
+        name: "名稱"
+        address: "地址"
+        created_at: "建立時間" 
+        updated_at: "更新時間" 
+      department:
+        company: "公司"
+        name: "名稱"
+        created_at: "建立時間" 
+        updated_at: "更新時間" 
+      restaurant_category:
+        name: "名稱"
+        created_at: "建立時間" 
+        updated_at: "更新時間" 
+      dish_category:
+        name: "名稱"
+        created_at: "建立時間" 
+        updated_at: "更新時間" 
