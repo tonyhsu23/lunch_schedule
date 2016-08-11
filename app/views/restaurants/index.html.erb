@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-9">
-    <h1><%= t("activerecord.models.restaurant") %></h1>
+    <h1><%= Restaurant.model_name.human %></h1>
     <div id="restaurants" class="restaurant-block">
       <%= div_for @restaurants do |restaurant|  %>
         <%= render restaurant %>
@@ -14,19 +14,19 @@
     <%= form_for @restaurant, validate: true, remote: true do |f| %>
       <div class="field form-group">
         <%= f.select :restaurant_category_id,
-          restaurant_categories, { include_blank: t("views.placeholder.restaurant.category") }, { class: 'form-control', required: true } %>
+          restaurant_categories, { include_blank: t("views.placeholder.restaurant.select_category") }, { class: 'form-control', required: true } %>
       </div>
 
       <div class="field form-group">
-        <%= f.text_field :name, { class: 'form-control', required: true, placeholder: t("views.placeholder.restaurant.name") } %>
+        <%= f.text_field :name, { class: 'form-control', required: true, placeholder: t("views.placeholder.restaurant.name", default: "Name") } %>
       </div>
 
       <div class="field form-group">
-        <%= f.text_field :address, { class: 'form-control', required: true, placeholder: t("views.placeholder.restaurant.address") } %>
+        <%= f.text_field :address, { class: 'form-control', required: true, placeholder: t("views.placeholder.restaurant.address", default: "Address") } %>
       </div>
 
       <div class="field form-group">
-        <%= f.telephone_field :phone_number, { class: 'form-control', required: true, placeholder: t("views.placeholder.restaurant.phone") } %>
+        <%= f.telephone_field :phone_number, { class: 'form-control', required: true, placeholder: t("views.placeholder.restaurant.phone", default: "Phone Number") } %>
       </div>
 
       <div class="field form-group">

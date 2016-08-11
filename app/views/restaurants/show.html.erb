@@ -1,5 +1,5 @@
 <ol class="breadcrumb">
-  <li><%= link_to t("activerecord.models.restaurant"), restaurants_path %></li>
+  <li><%= link_to Restaurant.model_name.human, restaurants_path %></li>
   <li class="active"><%= @restaurant.name %></li>
 </ol>
 
@@ -11,17 +11,17 @@
   <div class="form-inline">
     <div class="field form-group">
       <%= f.select :dish_category_id,
-        dish_categories, { include_blank: t("views.placeholder.dish.category") }, { class: 'form-control', required: true } %>
+        dish_categories, { include_blank: t("views.placeholder.dish.select_category") }, { class: 'form-control', required: true } %>
     </div>
 
     <div class="field form-group">
       <%= f.text_field :name,
-        { class: 'form-control', placeholder: t("views.placeholder.dish.name"), required: true} %>
+        { class: 'form-control', placeholder: t("views.placeholder.dish.name", default: "Name"), required: true} %>
     </div>
 
     <div class="field form-group">
       <%= f.number_field :price,
-        { class: 'form-control', placeholder: t("views.placeholder.dish.price"), required: true } %>
+        { class: 'form-control', placeholder: t("views.placeholder.dish.price", default: "Price"), required: true } %>
     </div>
 
     <div class="field form-group">
@@ -35,7 +35,7 @@
 
 <div class="row">
   <div class="col-lg-12">
-    <h3>Menu</h3>
+    <h3><%= t("views.content.menu") %></h3>
   </div>
 </div>
 

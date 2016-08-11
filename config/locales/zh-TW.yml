@@ -11,15 +11,16 @@
       participants: "一同用餐"
     placeholder:
       restaurant:
-        category: "餐廳種類"
+        select_category: "請選擇餐廳種類"
         name: "餐廳名稱"
         address: "餐廳地址"
         phone: "餐廳電話"
       dish:
-        category: "菜餚種類"
+        select_category: "請選擇菜餚種類"
         name: "菜餚名稱"
         price: "菜餚價錢"
       event:
+        select_restaurant: "請選擇用餐餐廳"
         select_all: "全部"
   activerecord:
     models:
@@ -81,3 +82,8 @@
         name: "名稱"
         created_at: "建立時間" 
         updated_at: "更新時間" 
+      event:
+        date: "用餐日期"
+        participants: "與誰一起用餐"
+        restaurant: "餐廳"
+        dishes: "吃了什麼"
