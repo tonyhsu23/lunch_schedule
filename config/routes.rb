@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   resources :dishes, only: [:create]
 
   get '/get_rest_dishes', to: 'events#get_rest_dishes'
-  get '/get_events_by_rc', to: 'events#get_events_by_rc'
+  get '/get_events_on_condition', to: 'events#get_events_on_condition'
 end

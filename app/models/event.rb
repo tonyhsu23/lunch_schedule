@@ -7,6 +7,9 @@ class Event < ActiveRecord::Base
 
   validates :date, presence: true
   validates :restaurant_id, presence: true
+
+  scope :by_month, ->(date) { where(date: month_duration(date)) }
+  scope :by_category, ->(rc_id) { where(restaurants: { restaurant_category_id: rc_id }) }
   
   def self.dashboard(user)
     colleagues = User.colleagues(user.company_id)
@@ -23,13 +26,27 @@ class Event < ActiveRecord::Base
     .distinct
   end
 
-  def self.my_events_by_rc(user, rc_id)
+  def self.my_events_by_month(user, date)
+    my_events(user).by_month(date)
+  end
+
+  def self.my_events_on_condition(user, rc_id, month)
     if rc_id == 'false'
       my_events(user)
+      .by_month(month_to_date(month))
     else
       my_events(user)
-      .where(restaurants: { restaurant_category_id: rc_id })
+      .by_category(rc_id)
+      .by_month(month_to_date(month))
     end
+  end
+
+  def self.month_duration(date)
+    date.beginning_of_month..date.end_of_month
+  end
+
+  def self.month_to_date(month)
+    Date.today.change(month: month.to_i)
   end
 
   def add_participants(participants)

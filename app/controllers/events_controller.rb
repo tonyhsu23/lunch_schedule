@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   def index
-    @events = Event.my_events(current_user)
+    @events = Event.my_events_by_month(current_user, Date.today)
   end
 
   def show
@@ -23,8 +23,12 @@ class EventsController < ApplicationController
     @dishes = Dish.where(restaurant_id: params[:restaurant_id])
   end
 
-  def get_events_by_rc
-    @events = Event.my_events_by_rc(current_user, params[:rest_cate_id])
+  def get_events_on_condition
+    @events = Event.my_events_on_condition(
+      current_user,
+      params[:rest_cate_id],
+      params[:month]
+    )
   end
 
   private

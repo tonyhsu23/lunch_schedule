@@ -1,18 +1,19 @@
 $(document).on("ready page:load", function() {
   $(".events-index .rc-selector").select2({theme: "bootstrap", language: "zh-TW"});
   $(".events-index select").change( function(e) {
-    if ($(this).val() == "" || $(this).val() == null){
+    if ($(".rc-selector").val() == "" || $(".rc-selector").val() == null){
       var id = false;
     } else {
-      var id = $(this).val();
+      var id = $(".rc-selector").val();
     }
 
     $.ajax({
-      url: "/get_events_by_rc",
+      url: "/get_events_on_condition",
       type: "GET",
       dataType: "script",
       data: {
-        rest_cate_id: id
+        rest_cate_id: id,
+        month: $("#date_month").val()
       }
     });
   });
