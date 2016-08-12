@@ -13,6 +13,10 @@ class User < ActiveRecord::Base
     "#{first_name} #{last_name}"
   end
 
+  def chinese_full_name
+    "#{chinese_last_name}#{chinese_first_name}"
+  end
+
   def self.colleagues(company_id)
     where(company_id: company_id)
   end

@@ -1,6 +1,6 @@
 class RestaurantsController < ApplicationController
   def index
-    @restaurants = Restaurant.all
+    @restaurants = Restaurant.by_company(current_user.company.id)
     @restaurant = Restaurant.new
   end
 
@@ -12,6 +12,7 @@ class RestaurantsController < ApplicationController
 
   def create
     @restaurant = Restaurant.new(restaurant_params)
+    @restaurant.add_company(current_user.company)
 
     respond_to do |format|
       unless @restaurant.save
