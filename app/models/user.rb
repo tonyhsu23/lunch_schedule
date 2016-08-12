@@ -17,7 +17,8 @@ class User < ActiveRecord::Base
     "#{chinese_last_name}#{chinese_first_name}"
   end
 
-  def self.colleagues(company_id)
+  def self.colleagues(company_id, user_id)
     where(company_id: company_id)
+    .where.not(id: user_id)
   end
 end

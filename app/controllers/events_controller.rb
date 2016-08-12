@@ -3,6 +3,10 @@ class EventsController < ApplicationController
     @events = Event.my_events_by_month(current_user, Date.today)
   end
 
+  def company_index
+    @events = Event.company_events(current_user)
+  end
+
   def show
     @event = Event.includes(:users).find(params[:id])
   end
@@ -25,6 +29,14 @@ class EventsController < ApplicationController
 
   def get_events_on_condition
     @events = Event.my_events_on_condition(
+      current_user,
+      params[:rest_cate_id],
+      params[:month]
+    )
+  end
+
+  def get_company_events_on_condition
+    @events = Event.company_events_on_condition(
       current_user,
       params[:rest_cate_id],
       params[:month]

@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :restaurants, only: [:index, :show, :create]
   resources :dishes, only: [:create]
 
+  get '/company/events', to: 'events#company_index'
   get '/get_rest_dishes', to: 'events#get_rest_dishes'
   get '/get_events_on_condition', to: 'events#get_events_on_condition'
+  get '/get_company_events_on_condition', to: 'events#get_company_events_on_condition'
 end

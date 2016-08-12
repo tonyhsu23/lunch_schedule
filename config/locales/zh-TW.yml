@@ -3,6 +3,7 @@
     navbar:
       new_event: "新增活動"
       my_event: "我的活動" 
+      company_event: "同事的活動"
     actions:
       new_restaurant: "新增餐廳"
       new_dish: "新增菜餚"
