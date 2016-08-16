@@ -17,6 +17,7 @@ gem 'devise', '~> 4.0'
 gem 'font-awesome-rails'
 gem 'client_side_validations'
 gem "select2-rails"
+gem 'kaminari'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

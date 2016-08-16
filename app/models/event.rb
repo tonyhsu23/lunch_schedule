@@ -8,9 +8,9 @@ class Event < ActiveRecord::Base
   validates :date, presence: true
   validates :restaurant_id, presence: true
 
-  scope :by_month, ->(date) { where(date: month_duration(date)) }
-  scope :by_category, ->(rc_id) { where(restaurants: { restaurant_category_id: rc_id }) }
-  
+  scope :by_month, -> (date) { where(date: month_duration(date)) }
+  scope :by_category, -> (rc_id) { where(restaurants: { restaurant_category_id: rc_id }) }
+
   def self.company_events(user)
     colleagues = User.colleagues(user.company_id, user.id)
 
@@ -20,12 +20,8 @@ class Event < ActiveRecord::Base
     .distinct
   end
 
-  def self.company_events_by_month
-    company_events(user).by_month(date)
-  end
-
   def self.company_events_on_condition(user, rc_id, month)
-    if rc_id == 'false'
+    unless rc_id
       company_events(user)
       .by_month(month_to_date(month))
     else
@@ -42,12 +38,8 @@ class Event < ActiveRecord::Base
     .distinct
   end
 
-  def self.my_events_by_month(user, date)
-    my_events(user).by_month(date)
-  end
-
   def self.my_events_on_condition(user, rc_id, month)
-    if rc_id == 'false'
+    unless rc_id
       my_events(user)
       .by_month(month_to_date(month))
     else

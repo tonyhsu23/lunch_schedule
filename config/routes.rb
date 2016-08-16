@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root to: 'landing#index'
-  devise_for :users, skip: :registration 
+  devise_for :users, skip: :registration
 
   resources :dashboard, only: [:index]
   resources :events, only: [:index, :show, :new, :create]
@@ -9,6 +9,4 @@ Rails.application.routes.draw do
 
   get '/company/events', to: 'events#company_index'
   get '/get_rest_dishes', to: 'events#get_rest_dishes'
-  get '/get_events_on_condition', to: 'events#get_events_on_condition'
-  get '/get_company_events_on_condition', to: 'events#get_company_events_on_condition'
 end

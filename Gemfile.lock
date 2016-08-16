@@ -87,6 +87,9 @@ GEM
     js_regex (1.0.17)
       regexp_parser (= 0.3.6)
     json (1.8.3)
+    kaminari (0.17.0)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.4)
@@ -213,6 +216,7 @@ DEPENDENCIES
   font-awesome-rails
   jbuilder (~> 2.0)
   jquery-rails
+  kaminari
   meta_request
   pry-rails
   rails (= 4.2.6)

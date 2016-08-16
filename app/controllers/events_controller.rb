@@ -1,10 +1,28 @@
 class EventsController < ApplicationController
+  include ParamValidator
+
   def index
-    @events = Event.my_events_by_month(current_user, Date.today)
+    month = get_month
+    page = get_page
+    restaurant_category_id = get_restaurant_category_id
+
+    @events = Event.my_events_on_condition(
+      current_user,
+      restaurant_category_id,
+      month
+    ).page(page)
   end
 
   def company_index
-    @events = Event.company_events(current_user)
+    month = get_month
+    page = get_page
+    restaurant_category_id = get_restaurant_category_id
+
+    @events = Event.company_events_on_condition(
+      current_user,
+      restaurant_category_id,
+      month
+    ).page(page)
   end
 
   def show
@@ -25,22 +43,6 @@ class EventsController < ApplicationController
 
   def get_rest_dishes
     @dishes = Dish.where(restaurant_id: params[:restaurant_id])
-  end
-
-  def get_events_on_condition
-    @events = Event.my_events_on_condition(
-      current_user,
-      params[:rest_cate_id],
-      params[:month]
-    )
-  end
-
-  def get_company_events_on_condition
-    @events = Event.company_events_on_condition(
-      current_user,
-      params[:rest_cate_id],
-      params[:month]
-    )
   end
 
   private

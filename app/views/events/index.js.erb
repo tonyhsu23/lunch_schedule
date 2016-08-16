@@ -1,2 +1,3 @@
 $(".single-event").html("");
 $(".single-event").html("<%= j render('events/event_list') %>");
+$("#paginator").html("<%= j paginate(@events, params: { _: nil }) %>");

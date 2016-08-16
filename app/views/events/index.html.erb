@@ -2,10 +2,25 @@
   <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
     <h1><%= t("views.navbar.my_event") %></h1>
     <div class="form-inline">
-      <%= collection_select(:restaurant_category, :restaurant_category_id, RestaurantCategory.all, :id, :name, {include_blank: t("views.placeholder.event.select_all")}, {class: 'rc-selector'}) %>
-      <%= select_month Date.today, {}, { class: 'form-control' }  %>
+      <%= collection_select(
+        :restaurant_category,
+        :restaurant_category_id,
+        RestaurantCategory.all,
+        :id,
+        :name,
+        {
+          include_blank: t("views.placeholder.event.select_all"),
+          selected: selected_category
+        },
+        { class: 'rc-selector' } )
+      %>
+      <%= select_month selected_month, {}, { class: 'form-control' }  %>
     </div>
     <hr>
     <%= render 'events/event_list' %>
+  </div>
+
+  <div class="col-md-8 col-md-offset-4" id="paginator">
+    <%= paginate @events %>
   </div>
 </div>
