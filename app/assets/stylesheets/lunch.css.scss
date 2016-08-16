@@ -1,3 +1,4 @@
+
 .dish-check-box {
   overflow: hidden;
 }
@@ -95,13 +96,18 @@ img.bg {
 $bgDefault      : #ffffff;
 $bgHighlight    : #ffffff;
 $colDefault     : #0d0d0d;
-$colHover       : #989898; 
+$colHover       : #989898;
+
+/* Make avatar align with text */
+a.avatar.dropdown-toggle {
+  padding: 6px 15px 6px 15px;
+}
 
 .navbar-default {
   background-color: $bgDefault;
   border-color: $bgHighlight;
   margin-bottom: 0;
-  padding: 10px 0 10px 0;
+  padding: 12px 0 12px 0;
   border: 0px 0px 10px 0px;
   border-color: #d2d2d2;
   .navbar-brand {
