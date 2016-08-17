@@ -12,7 +12,7 @@ class Event < ActiveRecord::Base
   scope :by_category, -> (rc_id) { where(restaurants: { restaurant_category_id: rc_id }) }
 
   def self.company_events(user)
-    colleagues = User.colleagues(user.company_id, user.id)
+    colleagues = User.colleagues(user.company_id)
 
     joins(:users)
     .includes(:restaurant)

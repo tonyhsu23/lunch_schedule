@@ -26,10 +26,9 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
-          <a href="#" class="avatar dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= image_tag avatar_url(current_user) %><span class="caret"></span></a>
+          <a href="#" class="avatar dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= image_tag avatar_url(current_user, '38') %><span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Settings</a></li>
-            <li><a href="#">Profile</a></li>
+            <li><a href="#"><%= link_to current_user.chinese_full_name, edit_user_registration_path %></a></li>
             <li role="separator" class="divider"></li>
             <li><%= link_to t('devise.sessions.sign_out'), destroy_user_session_path, method: :delete %></li>
           </ul>
