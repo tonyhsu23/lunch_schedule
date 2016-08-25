@@ -18,6 +18,8 @@ gem 'font-awesome-rails'
 gem 'client_side_validations'
 gem "select2-rails"
 gem 'kaminari'
+gem 'paperclip', '~> 5.0.0'
+gem 'remotipart', '~> 1.2'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

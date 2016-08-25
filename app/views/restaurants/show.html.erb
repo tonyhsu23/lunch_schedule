@@ -7,7 +7,7 @@
 <h1><%= @restaurant.name %></h1>
 
 <h2><%= t("views.actions.new_dish") %></h2>
-<%= form_for @dish, remote: true do |f| %>
+<%= form_for @dish, { multipart: true, remote: true } do |f| %>
   <div class="form-inline">
     <div class="field form-group">
       <%= f.select :dish_category_id,
@@ -22,6 +22,11 @@
     <div class="field form-group">
       <%= f.number_field :price,
         { class: 'form-control', placeholder: t("views.placeholder.dish.price", default: "Price"), required: true } %>
+    </div>
+
+    <div class="field form-group">
+      <%= f.label t("views.placeholder.dish.upload") %>
+      <%= f.file_field :image %>
     </div>
 
     <div class="field form-group">

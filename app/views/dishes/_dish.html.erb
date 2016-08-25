@@ -1,6 +1,10 @@
 <div class="col-md-3 col-sm-6 hero-feature">
   <div class="thumbnail">
-    <img src="http://placehold.it/800x500" alt="">
+    <% unless dish.dish_images.empty? %>
+      <%= image_tag dish.dish_images.first.image.url %>
+    <% else %>
+      <img src="http://placehold.it/800x500" alt="">
+    <% end %>
     <div class="caption">
       <h3><%= dish.name %></h3>
       <p>NTD <%= dish.price %></p>

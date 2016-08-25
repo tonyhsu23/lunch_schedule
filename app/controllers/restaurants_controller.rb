@@ -6,7 +6,7 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find(params[:id])
-    @dishes = @restaurant.dishes.includes(:dish_category)
+    @dishes = @restaurant.dishes.includes(:dish_category, :dish_images)
     @dish = Dish.new
   end
 

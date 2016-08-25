@@ -25,6 +25,7 @@
         select_category: "請選擇菜餚種類"
         name: "菜餚名稱"
         price: "菜餚價錢"
+        upload: "上傳照片"
       event:
         select_restaurant: "請選擇用餐餐廳"
         select_all: "全部"
