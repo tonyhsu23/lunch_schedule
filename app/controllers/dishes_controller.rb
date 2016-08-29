@@ -10,6 +10,20 @@ class DishesController < ApplicationController
     end
   end
 
+  def destroy
+    @dish = Dish.find(params[:id])
+    @err_msg = nil
+
+    respond_to do |format|
+      if @dish.destroy
+        format.js
+      else
+        @err_msg = t('views.actions.destroy_error')
+        format.js
+      end
+    end
+  end
+
   private
 
   def dish_params

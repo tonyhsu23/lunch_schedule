@@ -1,0 +1,5 @@
+<% if @err_msg %>
+  alert("<%= @err_msg %>");
+<% else %>
+  $("div#dish_<%= @dish.id %>")[0].remove();
+<% end %>
