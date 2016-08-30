@@ -57,7 +57,7 @@
           <h3><%= dish.name %></h3>
           <p>NTD <%= dish.price %></p>
         </div>
-        <%= link_to dish, method: :delete, remote: true do %>
+        <%= link_to dish, method: :delete, remote: true, data: { confirm: t('views.actions.destroy_confirm') } do %>
           <i class="fa fa-trash-o" aria-hidden="true"></i>
         <% end %>
       </div>

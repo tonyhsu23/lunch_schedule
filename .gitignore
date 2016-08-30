@@ -21,3 +21,6 @@
 
 # Ignore ctags file
 /tags
+
+# Ignore environment variables file
+/.env

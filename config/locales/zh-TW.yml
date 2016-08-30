@@ -13,6 +13,7 @@
       new_restaurant: "新增餐廳"
       new_dish: "新增菜餚"
       destroy_error: "發生錯誤"
+      destroy_confirm: "您確定要刪除嗎？"
     content:
       menu: "菜單"
       participants: "一同用餐"

@@ -12,7 +12,7 @@
 
   <div class="col-md-6 hero-feature">
     <div class="thumbnail">
-      <img src="http://placehold.it/1200x800" alt="">
+      <iframe width="545" height="363" frmaeborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=<%= ENV['GOOGLE_MAP_KEY'] %>&q=<%= @event.restaurant.address %>"></iframe>
       <div class="caption">
         <h3><%= @event.restaurant.name %></h3>
         <p><%= @event.restaurant.phone_number %></p>
