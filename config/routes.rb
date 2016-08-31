@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :dashboard, only: [:index]
   resources :events, only: [:index, :show, :new, :create]
-  resources :restaurants, only: [:index, :show, :create]
+  resources :restaurants, only: [:index, :show, :create, :edit, :update, :destroy]
   resources :dishes, only: [:create, :destroy]
 
   get '/company/events', to: 'events#company_index'
