@@ -9,7 +9,7 @@
       </h3>
       <p class="post-meta">
         <%= t("views.content.participants") %>
-        <%= event.users.map(&:full_name).join(', ') %>
+        <%= join_users(event.users) %>
       </p>
     </div>
     <hr>

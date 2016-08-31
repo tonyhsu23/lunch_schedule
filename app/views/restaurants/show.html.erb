@@ -4,9 +4,9 @@
 </ol>
 
 <div class="flash"></div>
-<h1><%= @restaurant.name %></h1>
+<h2><%= @restaurant.name %></h2>
 
-<h2><%= t("views.actions.new_dish") %></h2>
+<h4><%= t("views.actions.new_dish") %></h4>
 <%= form_for @dish, { multipart: true, remote: true } do |f| %>
   <div class="form-inline">
     <div class="field form-group">
@@ -40,7 +40,7 @@
 
 <div class="row">
   <div class="col-lg-12">
-    <h3><%= t("views.content.menu") %></h3>
+    <h4><%= t("views.content.menu") %></h4>
   </div>
 </div>
 

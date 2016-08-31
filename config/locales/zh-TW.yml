@@ -34,6 +34,7 @@
   activerecord:
     edit: "編輯"
     delete: "刪除"
+    cancel: "取消"
     update_success: "更新成功"
     destroy_success: "刪除成功"
     models:

@@ -1,6 +1,6 @@
 <hr>
 <h3><%= restaurant.name %></h3>
-<h5><%= restaurant.phone_number %></h5>
-<h5><%= restaurant.address %></h5>
+<h5><%= fa_icon "phone" %> <%= restaurant.phone_number %></h5>
+<h5><%= fa_icon "map-marker" %> <%= restaurant.address %></h5>
 <%= link_to(t("views.content.menu"), restaurant, class: "btn btn-primary") %>
 <%= link_to(t("activerecord.edit"), edit_restaurant_path(restaurant), class: "btn btn-success") %>

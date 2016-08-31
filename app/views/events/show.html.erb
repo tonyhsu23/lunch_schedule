@@ -4,19 +4,22 @@
 </ol>
 
 <div class="row">
-  <div class="col-md-6">
-    <h1><%= @event.date %></h1>
-    <h3><%= t("views.content.participants") %>:</h3>
-    <%= render @event.users %>
+  <div class="col-md-4 col-md-offset-4 text-center">
+    <h2><%= @event.date %></h2>
+    <h5><%= t("views.content.participants") %>: <%= join_users(@event.users) %></h5>
   </div>
+</div>
 
-  <div class="col-md-6 hero-feature">
+<hr>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3 hero-feature">
     <div class="thumbnail">
       <iframe width="545" height="363" frmaeborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=<%= ENV['GOOGLE_MAP_KEY'] %>&q=<%= @event.restaurant.address %>"></iframe>
       <div class="caption">
-        <h3><%= @event.restaurant.name %></h3>
-        <p><%= @event.restaurant.phone_number %></p>
-        <p><%= @event.restaurant.address %></p>
+        <h3><%= link_to @event.restaurant.name, @event.restaurant %></h3>
+        <p><%= fa_icon "phone" %> <%= @event.restaurant.phone_number %></p>
+        <p><%= fa_icon "map-marker" %> <%= @event.restaurant.address %></p>
       </div>
     </div>
   </div>
