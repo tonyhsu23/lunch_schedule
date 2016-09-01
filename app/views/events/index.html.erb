@@ -1,6 +1,6 @@
 <div class="row <%= controller_name %>-<%= action_name %>">
   <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-    <h1><%= t("views.navbar.my_event") %></h1>
+    <h1><%= t('views.navbar.my_event') %></h1>
     <div class="form-inline">
       <%= collection_select(
         :restaurant_category,
@@ -9,7 +9,7 @@
         :id,
         :name,
         {
-          include_blank: t("views.placeholder.event.select_all"),
+          include_blank: t('views.placeholder.event.select_all'),
           selected: selected_category
         },
         { class: 'rc-selector' } )

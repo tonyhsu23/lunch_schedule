@@ -14,10 +14,10 @@
         <li class="dropdown <%= 'active' if on_events_page? %>">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= t('activerecord.models.event') %> <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><%= link_to t("views.navbar.new_event"), new_event_path %></li>
+            <li><%= link_to t('views.navbar.new_event'), new_event_path %></li>
             <li role="separator" class="divider"></li>
-            <li><%= link_to t("views.navbar.my_event"), events_path %></li>
-            <li><%= link_to t("views.navbar.company_event"), company_events_path %></li>
+            <li><%= link_to t('views.navbar.my_event'), events_path %></li>
+            <li><%= link_to t('views.navbar.company_event'), company_events_path %></li>
           </ul>
         </li>
         <li class="<%= 'active' if on_restaurants_page? %>">

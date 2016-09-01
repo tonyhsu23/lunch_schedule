@@ -14,19 +14,19 @@
     <%= form_for @restaurant, validate: true, remote: true do |f| %>
       <div class="field form-group">
         <%= f.select :restaurant_category_id,
-          restaurant_categories, { include_blank: t("views.placeholder.restaurant.select_category") }, { class: 'form-control', required: true } %>
+          restaurant_categories, { include_blank: t('views.placeholder.restaurant.select_category') }, { class: 'form-control', required: true } %>
       </div>
 
       <div class="field form-group">
-        <%= f.text_field :name, { class: 'form-control', required: true, placeholder: t("views.placeholder.restaurant.name", default: "Name") } %>
+        <%= f.text_field :name, { class: 'form-control', required: true, placeholder: t('views.placeholder.restaurant.name', default: 'Name') } %>
       </div>
 
       <div class="field form-group">
-        <%= f.text_field :address, { class: 'form-control', required: true, placeholder: t("views.placeholder.restaurant.address", default: "Address") } %>
+        <%= f.text_field :address, { class: 'form-control', required: true, placeholder: t('views.placeholder.restaurant.address', default: 'Address') } %>
       </div>
 
       <div class="field form-group">
-        <%= f.telephone_field :phone_number, { class: 'form-control', required: true, placeholder: t("views.placeholder.restaurant.phone", default: "Phone Number") } %>
+        <%= f.telephone_field :phone_number, { class: 'form-control', required: true, placeholder: t('views.placeholder.restaurant.phone', default: 'Phone Number') } %>
       </div>
 
       <div class="field form-group">

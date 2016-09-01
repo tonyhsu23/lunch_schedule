@@ -30,7 +30,7 @@ class RestaurantsController < ApplicationController
     @restaurant = find_restaurant
     if @restaurant.update(restaurant_params)
       redirect_to restaurants_path,
-        flash: { notice: t("activerecord.update_success") }
+        flash: { notice: t('activerecord.update_success') }
     else
       render :edit
     end
@@ -40,7 +40,7 @@ class RestaurantsController < ApplicationController
     @restaurant = find_restaurant
     if @restaurant.destroy
       redirect_to restaurants_path,
-        flash: { notice: t("activerecord.destroy_success") }
+        flash: { notice: t('activerecord.destroy_success') }
     else
       render :edit
     end

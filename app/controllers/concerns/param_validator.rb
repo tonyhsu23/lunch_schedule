@@ -6,7 +6,7 @@ module ParamValidator
   def get_restaurant_category_id
     if params[:category].nil?
       false
-    elsif params[:category] == "false"
+    elsif params[:category] == 'false'
       false
     else
       params[:category]
